@@ -1,0 +1,10 @@
+{
+    "ls_plugin_system": {
+        "ignore_think_time": false
+    },
+
+    "ls_plugin_http": {
+        "http vesion": "1.1",
+        "keep alive": true
+    }
+}

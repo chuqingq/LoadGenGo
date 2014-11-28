@@ -1,0 +1,20 @@
+{
+    "type": "CALLMODEL_VUSER",
+    "init": 1,
+
+    "phases": [
+        {
+            "accelerate": 1,
+            "unit": 1,
+            "dest": 10,
+            "duration": 5
+        },
+
+        {
+            "accelerate": 1,
+            "unit": 2,
+            "dest": 20,
+            "duration": 10
+        }
+    ]
+}

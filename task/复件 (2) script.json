@@ -1,0 +1,42 @@
+{
+    "init": [
+    ],
+
+    "action": [
+        {
+            "line": 1,
+            "api": "ls_start_transaction",
+            "args": {
+                "transaction_name": "trans_1"
+            }
+        },
+
+        {
+            "line": 2,
+            "api": "ls_think_time",
+            "args": {
+                "time": 3000
+            }
+        },
+
+        {
+            "line": 3,
+            "api": "ls_end_transaction",
+            "args": {
+                "transaction_name": "trans_1",
+                "status": "pass"
+            }
+        },
+
+        {
+            "line": 4,
+            "api": "ls_output_message",
+            "args": {
+                "message": "hello world"
+            }
+        }
+    ],
+
+    "end": [
+    ]
+}

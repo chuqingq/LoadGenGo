@@ -1,0 +1,43 @@
+{
+    "var_unique": {
+        "name": "var_unique",
+        "type": "unique",
+
+        "from": 1,
+        "to": 100,
+        "blocksize": 10,
+        "format": "%10d",
+        "when out of range": "cyclic|abort"
+    },
+
+    "var_file": {
+        "name": "var_file",
+        "type": "file",
+
+        "file": "var_1.txt"
+    },
+
+    "var_file2": {
+        "name": "var_file2",
+        "type": "file",
+
+        "same line as": "var_file"
+    },
+
+    "var_random": {
+        "name": "var_random",
+        "type": "random",
+
+        "from": 1,
+        "to": 100,
+        "format": "%10d"
+    },
+
+    "var_date": {
+        "name": "var_date",
+        "type": "date",
+
+        "format": "YYYY-MM-DD HH:mm:SS",
+        "offset from now(seconds)": 0
+    }
+}

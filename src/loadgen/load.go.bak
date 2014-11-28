@@ -1,0 +1,32 @@
+package main
+
+import (
+	"loadgen"
+)
+
+func main() {
+	// defer loadgen.Setting.Terminate()
+	defer loadgen.Vars.Terminate()
+	defer loadgen.CallModel.Terminate()
+
+	err := loadgen.Script.Init(loadgen.Plugins, loadgen.PluginApis)
+	if err != nil {
+		panic(err.Error())
+	}
+	defer loadgen.Script.Terminate()
+
+	// task.Setting = setting
+	// task.Vars = vars
+	// task.CallModel = callmodel
+	// task.Script = script
+	err = loadgen.Task.Init(&loadgen.Setting, &loadgen.Vars, &loadgen.CallModel, &loadgen.Script)
+	if err != nil {
+		panic(err.Error())
+	}
+	defer loadgen.Task.Terminate()
+
+	err = loadgen.Task.Run()
+	if err != nil {
+		panic(err.Error())
+	}
+}

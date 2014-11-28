@@ -1,0 +1,67 @@
+{
+  "init": [],
+  "action": [
+    {
+      "api": "ls_start_transaction",
+      "args": {
+        "transaction_name": "trans_1"
+      }
+    },
+    {
+      "api": "ls_think_time",
+      "args": {
+        "milliseconds": 3000
+      }
+    },
+    {
+      "api": "ls_end_transaction",
+      "args": {
+        "status": "pass",
+        "transaction_name": "trans_1"
+      }
+    },
+    {
+      "api": "ls_output_message",
+      "args": {
+        "message": "hello world"
+      }
+    },
+    {
+      "api": "ls_http_request",
+      "args": {
+        "method": "GET",
+        "url": "http://localhost:6060/pkg/builtin/",
+        "version": "HTTP/1.1",
+        "headers": {
+          "Content-Length": "123",
+          "Host": "localhost:6060"
+        },
+        "body": [
+          "body",
+          "file:/home/chuqq/a.jpg"
+        ],
+        "refers": [
+          {
+            "method": "GET",
+            "url": "http://localhost:6060/pkg/builtin/a.jpg",
+            "version": "HTTP/1.1",
+            "headers": {
+              "Host": "localhost:6060"
+            },
+            "body": []
+          },
+          {
+            "method": "GET",
+            "url": "http://localhost:6060/pkg/builtin/b.jpg",
+            "version": "HTTP/1.1",
+            "headers": {
+              "Host": "localhost:6060"
+            },
+            "body": []
+          }
+        ]
+      }
+    }
+  ],
+  "end": []
+}
