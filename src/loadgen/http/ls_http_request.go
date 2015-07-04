@@ -2,7 +2,7 @@ package http
 
 import (
 	"encoding/json"
-	. "loadgen"
+	. "../../loadgen"
 	"log"
 )
 

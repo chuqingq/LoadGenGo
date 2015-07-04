@@ -2,12 +2,13 @@ package system
 
 import (
 	"encoding/json"
-	. "loadgen"
+	"../../loadgen"
 	"log"
 	"time"
 )
 
 type LsStartTransaction struct {
+	loadgen.LsPluginApi
 }
 
 func (api *LsStartTransaction) Name() string {
@@ -31,7 +32,7 @@ func (api *LsStartTransaction) Init(args json.RawMessage) (interface{}, error) {
 	return tran.Name, nil
 }
 
-func (api *LsStartTransaction) Run(parsedArgs interface{}, session *LsSession) error {
+func (api *LsStartTransaction) Run(parsedArgs interface{}, session *loadgen.LsSession) error {
 	log.Printf("LsStartTransaction.Run()")
 
 	trans := session.States[pluginName].(*LsSessionStateSystem).Trans
@@ -46,5 +47,5 @@ func (api *LsStartTransaction) Terminate(parsedArgs interface{}) {
 }
 
 func init() {
-	PluginApis["ls_start_transaction"] = &LsStartTransaction{}
+	loadgen.PluginApis["ls_start_transaction"] = &LsStartTransaction{}
 }

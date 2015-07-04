@@ -2,12 +2,12 @@ package system
 
 import (
 	"encoding/json"
-	. "loadgen"
+	"../../loadgen"
 	"log"
 )
 
 type LsOutputMessage struct {
-	LsPluginApi
+	loadgen.LsPluginApi
 }
 
 func (api *LsOutputMessage) Name() string {
@@ -34,7 +34,7 @@ func (api *LsOutputMessage) Init(args json.RawMessage) (interface{}, error) {
 	return msg.Message, nil
 }
 
-func (api *LsOutputMessage) Run(parsedArgs interface{}, session *LsSession) error {
+func (api *LsOutputMessage) Run(parsedArgs interface{}, session *loadgen.LsSession) error {
 	log.Printf("ls_output_message.Run()")
 
 	log.Printf("====%s====\n", parsedArgs.(string))
@@ -47,5 +47,5 @@ func (api *LsOutputMessage) Terminate(parsedArgs interface{}) {
 }
 
 func init() {
-	PluginApis["ls_output_message"] = &LsOutputMessage{}
+	loadgen.PluginApis["ls_output_message"] = &LsOutputMessage{}
 }

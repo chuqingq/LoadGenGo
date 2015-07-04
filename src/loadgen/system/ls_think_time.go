@@ -2,12 +2,13 @@ package system
 
 import (
 	"encoding/json"
-	. "loadgen"
+	. "../../loadgen"
 	"log"
 	"time"
 )
 
 type LsThinkTime struct {
+	LsPluginApi
 }
 
 func (api *LsThinkTime) Name() string {

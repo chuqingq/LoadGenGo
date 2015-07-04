@@ -1,7 +1,7 @@
 package system
 
 import (
-	. "loadgen"
+	. "../../loadgen"
 	"time"
 )
 

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"loadgen"
-	_ "loadgen/http"
-	_ "loadgen/system"
+	"../../loadgen"
+	_ "../http"
+	_ "../system"
 	"log"
 	"runtime"
 )
